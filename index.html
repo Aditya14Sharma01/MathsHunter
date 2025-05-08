@@ -1,181 +1,550 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="logo_round.png">
-<style>
-div.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  padding: 5px;
-  border:5px;
-  height:100px;	
-}
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-/* Caption text */
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-.home{
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
-.active {
-  background-color: #717171;
-}
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
-</style>
-<title>Maths Hunters</title></head>
-<body bgcolor="#CADCFC" align="center">
-<div class="slideshow-container">
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="home.png" style="width:100%">
-</div>
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="1.png" style="width:100%">
-</div>
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="2.png" style="width:100%">
-</div>
-</div>
-<br>
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
-<script>
-let slideIndex = 0;
-showSlides();
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2500); // Change image every 2 seconds
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths Hunters - Sajal Gupta's Coaching Institute</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f6fa;
+        }
 
+        .hero-section {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+        }
 
+        .feature-card {
+            transition: transform 0.3s;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
 
+        .contact-section {
+            background-color: #f8f9fa;
+        }
 
+        a:hover, a:focus {
+            color: #007bff !important;
+            text-decoration: underline;
+        }
 
-<br>
-<div class="sticky">
-<table bgcolor="#00246B" width="100%" height="10%" align="center"><tr><td>
-<header id="Home" style="position:sticky; top:0;">
-<button style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); border-radius:12px; padding: 5px 20px; background-color:#3399ff; color:white;" onclick="window.location.href='#Home';">Home</Button>
-<button style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); border-radius:12px; padding: 5px 20px; background-color:#3399ff; color:white;" onclick="window.location.href='#m&c';">Sajal Gupta</Button> 
-<button style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); border-radius:12px; padding: 5px 20px; background-color:#3399ff; color:white;" onclick="window.location.href='#Youtube';">Youtube</button>
-<button style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); border-radius:12px; padding: 5px 20px; background-color:#3399ff; color:white;" onclick="window.location.href='#Study Material';"> Study Material </Button> 
-<button style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); border-radius:12px; padding: 5px 20px; background-color:#3399ff; color:white;" onclick="window.location.href='#AboutUs';">About Us </Button>
-<button style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); border-radius:12px; padding: 5px 20px; background-color:#3399ff; color:white;" onclick="window.location.href='#Contact';"> Contact</Button>
-</header></td></tr></table><br><br></div>
+        .navbar .nav-link:hover, .navbar .nav-link:focus {
+            color: #007bff !important;
+            text-decoration: none !important;
+        }
 
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255,193,7,0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255,193,7,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,193,7,0); }
+        }
+        .flashy-contact-btn:hover, .flashy-contact-btn:focus {
+            background: linear-gradient(90deg, #ff9800 0%, #ffc107 100%) !important;
+            color: #222 !important;
+            text-shadow: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#" style="pointer-events: none; cursor: default; text-decoration: none; color: #fff;">
+                <img src="/images/logo_round.png" alt="Maths Hunters Logo" style="height: 40px; width: 40px; margin-right: 10px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                <span style="font-weight: bold; font-size: 1.5rem; color: #fff;">Maths Hunters</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                </ul>
+                <a href="#contact" class="btn btn-warning ms-lg-3 fw-bold flashy-contact-btn" style="background: linear-gradient(90deg, #ff9800 0%, #ffc107 100%); color: #222; border: none; box-shadow: 0 2px 8px rgba(255,193,7,0.3); animation: pulse 1.5s infinite;">Contact Now</a>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero-section p-0" style="margin-top: 70px;">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/1.png" class="d-block w-100" alt="Slide 1" style="max-height: 500px; object-fit: cover;">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/2.png" class="d-block w-100" alt="Slide 2" style="max-height: 500px; object-fit: cover;">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/3.png" class="d-block w-100" alt="Slide 3" style="max-height: 500px; object-fit: cover;">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">About Us</h2>
+            <div class="row">
+                <div class="col-md-6 d-flex flex-column align-items-center align-items-md-start mb-4 mb-md-0">
+                    <img src="/images/saju.png" alt="Sajal Gupta" style="width: 216px; height: 216px; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 16px rgba(44,62,80,0.15); margin-bottom: 20px;">
+                    <h3>Meet Sajal Gupta</h3>
+                    <p class="mb-1"><strong>BSc & MSc Mathematics </strong></p>
+                    <p class="lead">Expert Mathematics Educator</p>
+                    <p>With years of experience in teaching mathematics, Sajal Gupta has helped numerous students achieve their academic goals. His unique teaching methodology makes complex mathematical concepts easy to understand.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="card feature-card mb-4">
+                        <div class="card-body">
+                            <h4>Our Mission</h4>
+                            <p>To provide quality mathematics education that builds strong foundations and develops problem-solving skills in students.</p>
+                        </div>
+                    </div>
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <h4><i class="fas fa-lock me-2 text-primary"></i>Core Values</h4>
+                            <ul class="mb-0 ps-3">
+                                <li>Integrity in teaching and guidance</li>
+                                <li>Student-centric approach</li>
+                                <li>Continuous improvement</li>
+                                <li>Respect and inclusivity</li>
+                                <li>Passion for mathematics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Courses Section -->
+    <section id="courses" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Courses</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body">
+                            <h4>Senior Classes (9th-10th)</h4>
+                            <p>Comprehensive coverage of school curriculum, board exam preparation, and advanced problem-solving in Mathematics and Science.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body">
+                            <h4>Higher Secondary (11th-12th)</h4>
+                            <p>In-depth study of Mathematics and Science for board exams and competitive entrance tests. Regular practice and doubt sessions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body">
+                            <h4>Competitive Exams</h4>
+                            <p>Preparation for Olympiads, NTSE, KVPY, JEE, CUET, and other competitive exams with expert guidance and mock tests.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body">
+                            <h4>Crash Courses</h4>
+                            <p>Short-term intensive courses for quick revision and exam readiness. Ideal for last-minute preparation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body">
+                            <h4>Home Tuition</h4>
+                            <p>Personalized one-to-one home tuition for all classes and subjects, with a focus on Mathematics.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body">
+                            <h4>Postgraduate & Undergraduate Coaching</h4>
+                            <p>Specialized coaching for university-level mathematics courses and entrance exams, including both undergraduate and postgraduate programs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="m&c">
-<table width="100%" align="center" bgcolor="#8AB6F9"><tr><td><img src="saju.png" width="25%"></td></tr><tr>
-<td><h1>Sajal Gupta:<br> A Math Mentor Who Inspires Comfort and Confidence</h1><br>
-<h3>👋 Hello, dear visitors! I’m thrilled to introduce you to the brilliant mind behind this virtual space—Sajal Gupta. As an educator, mentor, and lifelong learner, Sajal brings a wealth of knowledge and passion to the classroom. With a penchant for inspiring curiosity and fostering creativity, Sajal has touched the lives of countless students.<br><br>
-Whether it’s unraveling complex algorithms, discussing the nuances of literature, or simply sharing a cup of chai during office hours, Sajal’s dedication to education knows no bounds. So, come along on this journey of discovery as we explore the fascinating world of ideas, code, and inspiration together.<br><br>
-Feel free to explore the various sections of this website, where you’ll find Sajal’s thoughts, projects, and perhaps a sprinkle of humor. 🌟<br><br>
-Thank you for being part of our community, and remember: Learning is an adventure, and Sajal Gupta is your guide! 🚀<br><br></h3>
-</td></tr></table><br>
-</section>
+    <!-- YouTube Channel Reference Section -->
+    <section class="py-5 bg-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Check Out Our YouTube Channel!</h2>
+            <a href="https://www.youtube.com/@mathshunters" target="_blank" rel="noopener">
+                <img src="/images/Yt.png" alt="Maths Hunters YouTube Channel" style="max-width: 480px; width: 100%; height: auto; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border-radius: 16px; transition: transform 0.2s;">
+            </a>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5" style="background: #fff; color: #222;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="font-weight: bold; color: #222;">Get In Touch</h2>
+            <div class="row justify-content-center align-items-center">
+                <!-- Contact Info -->
+                <div class="col-md-5 mb-4 mb-md-0 order-1 order-md-1">
+                    <ul class="list-unstyled fs-5">
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-phone me-2 text-dark"></i> <span class="text-dark">+91 95829 22403</span></li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-phone me-2 text-dark"></i> <span class="text-dark">+91 93105 10471</span></li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fab fa-whatsapp me-2 text-dark"></i> <a href="https://wa.link/2ca0mk" class="text-dark text-decoration-none" target="_blank">Chat on WhatsApp</a></li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-map-marker-alt me-2 text-dark"></i> <a href="https://maps.app.goo.gl/9DfgDZarFZJDAwKW6" class="text-dark text-decoration-none" target="_blank">Delhi, India (View on Map)</a></li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fab fa-facebook me-2 text-dark"></i> <a href="https://www.facebook.com/profile.php?id=100010100972295" class="text-dark text-decoration-none" target="_blank">facebook.com/profile.php?id=100010100972295</a></li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fab fa-instagram me-2 text-dark"></i> <a href="https://www.instagram.com/sajal.gupta063/" class="text-dark text-decoration-none" target="_blank">instagram.com/sajal.gupta063</a></li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fab fa-instagram me-2 text-dark"></i> <a href="https://www.instagram.com/practishala/" class="text-dark text-decoration-none" target="_blank">instagram.com/practishala</a></li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fab fa-youtube me-2 text-dark"></i> <a href="https://www.youtube.com/@mathshunters" class="text-dark text-decoration-none" target="_blank">youtube.com/@mathshunters</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Form -->
+                <div class="col-md-6 order-2 order-md-2">
+                    <div class="card p-4" style="background: #f8f9fa; border: none; border-radius: 15px;">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control bg-white text-dark border-1" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control bg-white text-dark border-1" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" class="form-control bg-white text-dark border-1" placeholder="Your Phone Number">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control bg-white text-dark border-1" rows="4" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100" style="background: #007bff; border: none; font-weight: 500;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq1-heading">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                            What courses do you offer at Maths Hunters?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We offer School Mathematics, Competitive Exam Preparation, and Advanced Mathematics courses for various levels.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq2-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                            Who is the instructor at Maths Hunters?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            All courses are taught by Sajal Gupta, an experienced mathematics educator dedicated to student success.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq3-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                            How can I enroll in a course?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You can enroll by filling out the contact form or reaching out to us via email or phone. We will guide you through the enrollment process.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq4-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                            Where is Maths Hunters located?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We are based in Delhi, India. Online classes are also available for students from other locations.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq5-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                            What subjects and classes are covered at Maths Hunters?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faq5-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We offer coaching for all classes and all subjects, with specialization in Mathematics.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq6-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                            What are the available course durations?
+                        </button>
+                    </h2>
+                    <div id="faq6" class="accordion-collapse collapse" aria-labelledby="faq6-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We offer 12-month, 6-month, and 1-month courses to suit different learning needs.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq7-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
+                            What are the class timings?
+                        </button>
+                    </h2>
+                    <div id="faq7" class="accordion-collapse collapse" aria-labelledby="faq7-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Class timings are flexible and scheduled as per the institute's direction to best suit students' needs.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq8-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">
+                            Are classes available offline and as home tuitions?
+                        </button>
+                    </h2>
+                    <div id="faq8" class="accordion-collapse collapse" aria-labelledby="faq8-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we offer both offline classes at our institute and home tuition options for students.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq9-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false" aria-controls="faq9">
+                            Is study material provided?
+                        </button>
+                    </h2>
+                    <div id="faq9" class="accordion-collapse collapse" aria-labelledby="faq9-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, comprehensive study material is provided and included in the course fees.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq10-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false" aria-controls="faq10">
+                            How are doubts cleared?
+                        </button>
+                    </h2>
+                    <div id="faq10" class="accordion-collapse collapse" aria-labelledby="faq10-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Doubts are cleared live during class, after class, and in special 1:1 Sunday doubt sessions.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq11-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11" aria-expanded="false" aria-controls="faq11">
+                            What is the average batch size?
+                        </button>
+                    </h2>
+                    <div id="faq11" class="accordion-collapse collapse" aria-labelledby="faq11-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            The average batch size is between 10 and 20 students, ensuring personalized attention.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq12-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq12" aria-expanded="false" aria-controls="faq12">
+                            Do you offer demo classes?
+                        </button>
+                    </h2>
+                    <div id="faq12" class="accordion-collapse collapse" aria-labelledby="faq12-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we offer demo classes so students can experience our teaching style before enrolling.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq13-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq13" aria-expanded="false" aria-controls="faq13">
+                            What are the fees and payment methods?
+                        </button>
+                    </h2>
+                    <div id="faq13" class="accordion-collapse collapse" aria-labelledby="faq13-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Fees vary as per classes and Practishala Admission Test (PAT) results. We accept both online and offline payments. Scholarships up to 100% are available based on PAT performance.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq14-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq14" aria-expanded="false" aria-controls="faq14">
+                            Is there a refund policy?
+                        </button>
+                    </h2>
+                    <div id="faq14" class="accordion-collapse collapse" aria-labelledby="faq14-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            No, we do not offer refunds once the admission is confirmed.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq15-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq15" aria-expanded="false" aria-controls="faq15">
+                            How are parents involved in the learning process?
+                        </button>
+                    </h2>
+                    <div id="faq15" class="accordion-collapse collapse" aria-labelledby="faq15-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We conduct fortnightly Parent-Teacher Meetings (PTMs) to keep parents updated on their child's progress.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq16-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq16" aria-expanded="false" aria-controls="faq16">
+                            How can parents track student performance?
+                        </button>
+                    </h2>
+                    <div id="faq16" class="accordion-collapse collapse" aria-labelledby="faq16-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Parents have access to an online dashboard where they can view the latest test results and attendance records.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq17-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq17" aria-expanded="false" aria-controls="faq17">
+                            Do you provide coaching for competitive exams and higher education?
+                        </button>
+                    </h2>
+                    <div id="faq17" class="accordion-collapse collapse" aria-labelledby="faq17-heading" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we provide coaching for all competitive exams as well as undergraduate and postgraduate courses.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4" itemscope itemtype="https://schema.org/LocalBusiness">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 itemprop="name">Maths Hunters Coaching Institute</h5>
+                    <p>Empowering students with mathematical excellence. Join Maths Hunters to build a strong foundation in mathematics and excel in all subjects.</p>
+                    <address class="mb-0" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <strong>Address:</strong> <span itemprop="streetAddress">Delhi</span>, <span itemprop="addressCountry">India</span><br>
+                        <strong>Email:</strong> <a href="mailto:sajalgupta.maths@gmail.com" class="text-white text-decoration-underline" itemprop="email">sajalgupta.maths@gmail.com</a><br>
+                        <strong>Phone:</strong> <a href="tel:+919582922403" class="text-white text-decoration-underline" itemprop="telephone">+91 95829 22403</a><br>
+                        <strong>Alternate Phone:</strong> <a href="tel:+919310510471" class="text-white text-decoration-underline" itemprop="telephone">+91 93105 10471</a>
+                    </address>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Navigation</h5>
+                    <nav aria-label="Footer Navigation">
+                        <ul class="list-unstyled">
+                            <li><a href="#home" class="text-white text-decoration-none" title="Maths Hunters Home">Maths Hunters Home</a></li>
+                            <li><a href="#about" class="text-white text-decoration-none" title="About Maths Hunters">About Maths Hunters</a></li>
+                            <li><a href="#courses" class="text-white text-decoration-none" title="Maths Hunters Courses">Maths Hunters Courses</a></li>
+                            <li><a href="#faq" class="text-white text-decoration-none" title="Maths Hunters FAQ">Maths Hunters FAQ</a></li>
+                            <li><a href="#contact" class="text-white text-decoration-none" title="Contact Maths Hunters">Contact Maths Hunters</a></li>
+                            <li><a href="#" class="text-white text-decoration-none" title="Maths Hunters Privacy Policy">Privacy Policy</a></li>
+                            <li><a href="#" class="text-white text-decoration-none" title="Maths Hunters Terms of Service">Terms of Service</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Connect With Maths Hunters</h5>
+                    <div class="social-links mb-2">
+                        <a href="https://www.facebook.com/profile.php?id=100010100972295" class="text-white me-3" target="_blank" rel="noopener" title="Maths Hunters Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/sajal.gupta063/" class="text-white me-3" target="_blank" rel="noopener" title="Sajal Gupta Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/practishala/" class="text-white me-3" target="_blank" rel="noopener" title="Practishala Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@mathshunters" class="text-white me-3" target="_blank" rel="noopener" title="Maths Hunters YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.link/2ca0mk" class="text-white me-3" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://maps.app.goo.gl/9DfgDZarFZJDAwKW6" class="text-white me-3" target="_blank" rel="noopener" title="Google Maps"><i class="fas fa-map-marker-alt"></i></a>
+                    </div>
+                    <p class="mb-0">Follow us on social media for updates, tips, and success stories from Maths Hunters students.</p>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p class="mb-0">&copy; 2024 Maths Hunters Coaching Institute. All rights reserved.</p>
+                <script type="application/ld+json">
+                {
+                  "@context": "https://schema.org",
+                  "@type": "LocalBusiness",
+                  "name": "Maths Hunters Coaching Institute",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Delhi",
+                    "addressCountry": "India"
+                  },
+                  "email": "sajalgupta.maths@gmail.com",
+                  "telephone": ["+91 95829 22403", "+91 93105 10471"],
+                  "url": "https://www.youtube.com/@mathshunters",
+                  "sameAs": [
+                    "https://www.facebook.com/profile.php?id=100010100972295",
+                    "https://www.instagram.com/sajal.gupta063/",
+                    "https://www.instagram.com/practishala/",
+                    "https://www.youtube.com/@mathshunters",
+                    "https://wa.link/2ca0mk",
+                    "https://maps.app.goo.gl/9DfgDZarFZJDAwKW6"
+                  ]
+                }
+                </script>
+            </div>
+        </div>
+    </footer>
 
-
-<section id="Youtube">
-<table bgcolor="black" width="100%" align="center"><tr><td>
-<a href="https://www.youtube.com/@mathshunters?sub_confirmation=1"><img src="Yt.png" width="80%"></a></td></tr></table>
-<br></section>
-
-<section id="Study Material">
-<h2> Maths - 12 - ch3 - assignment</h2>
-<iframe src="https://drive.google.com/file/d/1XsK4Vgev3UxzdDtz0LDdQjhQWdWSmxnr/preview" width="640" height="480" allow="autoplay"></iframe>
-</section><br>
-
-
-<section id="AboutUs">
-<table bgcolor="#8AB6F9" align="center" width="100%" ><tr><th>
-<h1>OUR NUMBERS SAY FOR US </h1>
-<img src="Comments.png" width="50%">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.3506060937198!2d77.27906957559412!3d28.649218975655693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd00268d4913%3A0xd6f4b221aeafee37!2sMaths%20Hunters!5e0!3m2!1sen!2sin!4v1712675333702!5m2!1sen!2sin" width="50%" style="border:0;"></iframe>
-</th></tr></table>
-</section>
-
-
-<footer id="Contact"><br>
-<table bgcolor="#00246B" width="100%" align="center"><tr><td>
-<h1><p style="color:white;">Contact us</p></h1> 
-<img src="Whatsapp.png" width="10%" onclick="window.location.href='https://wa.link/2ca0mk';">
-<img src="Instagram.png" width="10%" onclick="window.location.href='https://www.instagram.com/sajal.gupta063?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==';">
-<img src="Location.png" width="10%" onclick="window.location.href='https://maps.app.goo.gl/9DfgDZarFZJDAwKW6';">
-<img src="Phone.webp" width="10%" onclick="window.location.href="tel:+91-9582922403";">
-<img src="Youtube.png" width="10%" onclick="window.location.href='https://www.youtube.com/@mathshunters';">
-</td></tr>
-<tr><td><p style="color:white;">© Sajal Gupta</p>
-</td></tr></table>
-</footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
